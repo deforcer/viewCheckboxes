@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ViewCheckbox</string>
+    <string name="inputMoney">Ввод денег</string>
+    <string name="okBtn">OK</string>
+    <string name="bankCard">С банковской карты</string>
+    <string name="mobilePhone">С мобильного телефона</string>
+    <string name="cashOnAdress">Наличными по адресу</string>
+    <string name="aboutPayment">Информация об оплате</string>
+</resources>
