@@ -12,9 +12,8 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private EditText mInputMoney;
+
     private EditText mInputInfo;
-    private Button mBtnOk;
     private CheckBox mBankCardChkBx;
     private CheckBox mMobilePhoneChkBx;
     private CheckBox mCashAddressChkBx;
@@ -28,9 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        mInputMoney = findViewById(R.id.inputMoney);
         mInputInfo = findViewById(R.id.inputInfo);
-        mBtnOk = findViewById(R.id.btnOK);
+        Button mBtnOk = findViewById(R.id.btnOK);
         mBankCardChkBx = findViewById(R.id.bankCardChkBx);
         mMobilePhoneChkBx = findViewById(R.id.mobilePhoneChkBx);
         mCashAddressChkBx = findViewById(R.id.cashAddressChkBx);
@@ -50,13 +48,13 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             if (mBankCardChkBx.isChecked()) {
-                Toast.makeText(MainActivity.this, "Банковская карта", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, R.string.bankCard, Toast.LENGTH_LONG).show();
             }
             if (mMobilePhoneChkBx.isChecked()) {
-                Toast.makeText(MainActivity.this, "Мобильный телефон", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, R.string.mobilePhone, Toast.LENGTH_LONG).show();
             }
             if (mCashAddressChkBx.isChecked()) {
-                Toast.makeText(MainActivity.this, "Оплата наличными", Toast.LENGTH_LONG).show();
+                Toast.makeText(MainActivity.this, R.string.cashOnAdress, Toast.LENGTH_LONG).show();
             }
         }
     };
@@ -64,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
     CompoundButton.OnCheckedChangeListener checkedChangeListener = new CompoundButton.OnCheckedChangeListener() {
         @Override
-        public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-            if (b) {
+        public void onCheckedChanged(CompoundButton compoundButton, boolean checked) {
+            if (checked) {
                 switch (compoundButton.getId()) {
                     case R.id.bankCardChkBx:
                         resetCheckBoxes();
